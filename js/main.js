@@ -63,12 +63,20 @@ function validate(e) {
      * Показывает error тексты
      */
     form.forEach(item => {
-        if (item.value === "" || item.id === "photo" && item.src === "") {
+        if (item.value === "") {
             e.preventDefault();
             const query = "." + item.id + "_error";
             let errorLabel = document.querySelector(query);
             errorLabel.className = errorLabel.className.replace("d-none", "");
         }
+
+        const img = document.getElementById("selected_image").src;
+        if (img === "") {
+            const query = ".photo_error";
+            let errorLabel = document.querySelector(query);
+            errorLabel.className = errorLabel.className.replace("d-none", "");
+        }
+
     });
 
     /**
