@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey-App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<form action="action.php" method="post" enctype="multipart/form-data">
+
+    <div class="wrap">
+
+        <!--Блок с почтой-->
+        <div class="email-block" id="email-block">
+            <div class="form-group">
+                <label for="email">Введите E-mail</label>
+                <input type="email" id="email" name="email" value="som@m.m" class="form-control" required>
+                <span class="text-danger email-error d-none">Заполните это поле</span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-dark" type="button" onclick="showQuestions()">Начать</button>
+            </div>
+        </div>
+        <!--Блок с почтой-->
+
+        <!--Блок с вопросоми-->
+
+        <div class="question-block d-none" id="question-block">
+
+            <!--Карточка вопроса нужен for questions-->
+            <div class="card">
+                <div class="card-header">
+                    Заголовок вопроса
+                </div>
+                <div class="card-body">
+                    <p>Описание вопроса</p>
+                    <!--Скритый input типа question_<id>-->
+                    <input type="hidden" value="" name="question_1" id="question_1">
+
+                    <!--Блок с шкалой-->
+                    <div class="slider-values">
+                        <!--
+                        Шкала от 1-0 нуждаеться к for
+                        selectRange(значение шкалы, id вопроса)
+                        id = question-<id попроса>-btn-значение шкалы
+                        -->
+                        <button class="btn btn-primary" id="question-1-btn-1" type="button"
+                                onclick="selectRange(1,1,event)">1
+                        </button>
+                    </div>
+                    <span class="text-danger question_1_error d-none">Выберети шкалу</span>
+                </div>
+            </div>
+            <!--Карточка вопроса-->
+
+            <!--Фотография-->
+            <div class="card">
+                <div class="card-header">
+                    Прикрепить фото
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <input type="file" name="photo" id="photo" accept="image/x-png,image/gif,image/jpeg"
+                               onchange="previewImg(event)" required>
+                        <label for="photo" class="d-flex align-items-center justify-content-center">
+                            <div class="img-holder">
+                                <img id="selected_image">
+                            </div>
+                        </label>
+                        <span class="text-danger photo_error d-none">Заполните это поле</span>
+                    </div>
+                </div>
+            </div>
+            <!--Фотография-->
+
+            <div class="form-group">
+                <button class="btn btn-success" type="submit" onclick="validate(event)">Отправить</button>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+<script src="js/main.js"></script>
+</body>
+</html>

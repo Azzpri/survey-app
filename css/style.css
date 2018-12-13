@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700');
+
+:root {
+    --primary-color: blue;
+    --secondary-color: gray;
+    --extra-color: #2d2d2d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif !important;
+    width: 100%;
+    height: 100%;
+    color: #2d2d2d !important;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.email-block {
+    min-height: 300px;
+    min-width: 90%;
+    margin: auto;
+    padding: 40px 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 2px 2px #dcdcdc;
+}
+
+.question-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.question-block .card {
+    min-width: 90%;
+    margin-bottom: 20px;
+}
+
+.slider-values {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slider-values .btn {
+    margin-bottom: 4px;
+    margin-left: 4px;
+}
+
+.img-holder {
+    border: 1px dashed #2d2d2d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    max-height: 200px;
+    max-width: 240px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#photo {
+    opacity: 0;
+    display: none;
+}
+
+#selected_image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
